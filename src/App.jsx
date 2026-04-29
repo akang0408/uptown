@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import StatusBanner from './components/StatusBanner'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import About from './pages/About'
@@ -16,6 +17,7 @@ function ScrollToTop() {
 function Layout() {
   return (
     <>
+      <StatusBanner />
       <ScrollToTop />
       <Nav />
       <main>

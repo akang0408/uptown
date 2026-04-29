@@ -57,9 +57,10 @@ ul, ol { list-style: none; }
   --space-7:  48px; --space-8:  64px;  --space-9: 96px;
 
   /* Layout */
-  --max-w:   1100px;
-  --nav-h:   84px;
-  --radius:  6px;
+  --max-w:     1100px;
+  --nav-h:     84px;
+  --banner-h:  0px;
+  --radius:    6px;
   --radius-lg: 12px;
 
   /* Transitions */
@@ -202,7 +203,7 @@ body {
 
 /* ─── Page Hero (shared inner pages) ────────────────────── */
 .page-hero {
-  padding: calc(var(--nav-h) + var(--space-8)) 0 var(--space-8);
+  padding: calc(var(--nav-h) + var(--banner-h) + var(--space-8)) 0 var(--space-8);
   background: var(--bg-raised);
   border-bottom: 1px solid var(--border-subtle);
   text-align: center;

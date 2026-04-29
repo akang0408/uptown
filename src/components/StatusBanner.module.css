@@ -1,0 +1,82 @@
+.banner {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  animation: slideDown 0.35s var(--ease) both;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+/* ── Closing-soon variant ── */
+.warn {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* ── Closed variant ── */
+.closed {
+  background: var(--bg-dark);
+  color: rgba(250, 250, 247, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Pulsing status dot ── */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+.warn   .dot { background: rgba(255, 255, 255, 0.85); }
+.closed .dot { background: rgba(250, 250, 247, 0.35); animation: none; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.5; transform: scale(0.75); }
+}
+
+/* ── Message ── */
+.msg {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 80px);
+}
+
+/* ── Dismiss button ── */
+.dismiss {
+  position: absolute;
+  right: var(--space-4);
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--radius);
+  transition: opacity var(--t-fast), background var(--t-fast);
+  line-height: 1;
+}
+.dismiss:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 480px) {
+  .banner { font-size: 0.7rem; }
+  .dismiss { right: var(--space-3); }
+}

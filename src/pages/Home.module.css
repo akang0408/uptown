@@ -1,7 +1,7 @@
 /* ─── Hero ─────────────────────────────────────────────── */
 .hero {
   background: var(--bg-raised);
-  padding-top: var(--nav-h);
+  padding-top: calc(var(--nav-h) + var(--banner-h));
   position: relative;
   overflow: hidden;
 }
@@ -416,7 +416,7 @@ a.findUsValue:hover { color: rgba(250,250,247,0.9); }
 }
 
 @media (max-width: 900px) {
-  .heroInner { grid-template-columns: 1fr; gap: var(--space-7); }
+  .heroInner { grid-template-columns: 1fr; gap: var(--space-5); padding-top: var(--space-5); padding-bottom: var(--space-6); }
   .heroImage { order: -1; max-width: 480px; margin: 0 auto; }
   .heroImgFrame { max-height: 360px; }
   .aboutGrid { grid-template-columns: 1fr; gap: var(--space-7); }

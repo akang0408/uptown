@@ -53,11 +53,6 @@ function Hero() {
               alt="Fresh food at Uptown Grill and Deli"
             />
           </div>
-          <div className={styles.heroFloatCard}>
-            <span className={styles.floatNum}>5.0</span>
-            <span className={styles.floatStars}>★★★★★</span>
-            <span className={styles.floatLabel}>Google Reviews</span>
-          </div>
         </div>
       </div>
 
