@@ -98,7 +98,7 @@
 .heroImgFrame img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.9) saturate(1.05);
+  filter: brightness(1.02) contrast(1.08) saturate(1.25);
 }
 
 .heroFloatCard {
@@ -174,13 +174,19 @@
 .featuredImg {
   aspect-ratio: 4/3;
   overflow: hidden;
+  background: var(--bg-surface);
 }
 .featuredImg img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform var(--t-slow) var(--ease);
+  object-position: center;
+  filter: brightness(1.04) contrast(1.1) saturate(1.3);
+  transition: transform var(--t-slow) var(--ease), filter var(--t-slow) var(--ease);
 }
-.featuredCard:hover .featuredImg img { transform: scale(1.04); }
+.featuredCard:hover .featuredImg img {
+  transform: scale(1.05);
+  filter: brightness(1.08) contrast(1.12) saturate(1.4);
+}
 
 .featuredBody { padding: var(--space-5); }
 .featuredTop {

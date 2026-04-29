@@ -26,9 +26,13 @@
 .imgA img, .imgB img, .imgC img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform var(--t-slow) var(--ease);
+  filter: brightness(1.04) contrast(1.1) saturate(1.3);
+  transition: transform var(--t-slow) var(--ease), filter var(--t-slow) var(--ease);
 }
-.imgA:hover img, .imgB:hover img, .imgC:hover img { transform: scale(1.03); }
+.imgA:hover img, .imgB:hover img, .imgC:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.07) contrast(1.12) saturate(1.4);
+}
 
 /* Values */
 .valuesGrid {
