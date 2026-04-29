@@ -1,0 +1,99 @@
+.footer {
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+  padding-top: var(--space-7);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.6fr 1.4fr;
+  gap: var(--space-9);
+  padding-bottom: var(--space-9);
+  margin-bottom: var(--space-2);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.brand {}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+.logoMark {
+  width: 40px; height: 40px;
+  background: var(--green-light);
+  color: #fff;
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.2rem; font-weight: 700;
+  flex-shrink: 0;
+}
+.logoName {
+  font-family: var(--font-serif);
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--text-inverse);
+}
+.logoSub { font-size: 0.78rem; color: rgba(250,250,247,0.45); margin-top: 1px; }
+
+.tagline {
+  font-size: 0.875rem;
+  color: rgba(250,250,247,0.55);
+  line-height: 1.75;
+  max-width: 340px;
+  margin-bottom: var(--space-4);
+}
+
+.liveHours { font-size: 0.8rem; color: rgba(250,250,247,0.5); margin-bottom: var(--space-4); }
+.openDot   { color: #6fcf97; margin-right: 6px; }
+.closedDot { color: rgba(250,250,247,0.3); margin-right: 6px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.navGroup {
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.navGroup h3 {
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--mustard-light);
+  margin-bottom: var(--space-1);
+}
+.navGroup a {
+  font-size: 0.875rem;
+  color: rgba(250,250,247,0.55);
+  transition: color var(--t-fast);
+}
+.navGroup a:hover { color: rgba(250,250,247,0.9); }
+
+.address {
+  font-size: 0.8rem;
+  color: rgba(250,250,247,0.4);
+  line-height: 1.7;
+  margin-top: var(--space-2);
+}
+
+.bottom {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.78rem;
+  color: rgba(250,250,247,0.3);
+}
+
+@media (max-width: 900px) {
+  .top { grid-template-columns: 1fr; gap: var(--space-7); }
+}
+@media (max-width: 600px) {
+  .nav { grid-template-columns: 1fr 1fr; }
+  .bottom { flex-direction: column; gap: var(--space-2); text-align: center; }
+}

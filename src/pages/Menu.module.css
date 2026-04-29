@@ -1,0 +1,178 @@
+.tabBar {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 100;
+  background: rgba(242,235,224,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+.tabInner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.tabInner::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: var(--space-4) var(--space-4);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+}
+.tab:hover { color: var(--text-secondary); }
+.tabActive {
+  color: var(--orange);
+  font-weight: 500;
+  border-bottom-color: var(--orange);
+}
+
+.menuSection {}
+
+/* ─── Mobile pills ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .tabBar {
+    position: sticky;
+    border-bottom: none;
+    box-shadow: none;
+    padding: var(--space-4) 0;
+  }
+  .tabInner {
+    padding: 0 var(--space-4);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    overflow-x: visible;
+  }
+  .tab {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    background: rgba(0,0,0,0.05);
+    transition: background var(--t-fast), color var(--t-fast);
+  }
+  .tab:hover { background: rgba(0,0,0,0.09); color: var(--text-primary); }
+  .tabActive {
+    background: var(--orange);
+    color: #fff;
+    border-bottom-color: transparent;
+    font-weight: 500;
+  }
+  .tabActive:hover { background: var(--orange-mid); }
+  .grid { grid-template-columns: 1fr; }
+  .menuSection { padding-top: var(--space-5); }
+}
+
+.catMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-7);
+}
+.catNote {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.catCount {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  background: #fff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--t-mid), box-shadow var(--t-mid);
+}
+.card:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 4px 16px rgba(45,80,22,0.07);
+}
+.cardExpandable { cursor: default; }
+
+.cardMain { padding: var(--space-5); }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.cardName {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.cardPrice {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--orange-mid);
+  white-space: nowrap;
+}
+.cardDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+}
+
+.expandBtn {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--orange-mid);
+  padding: 0;
+  margin-top: var(--space-2);
+  cursor: pointer;
+  transition: color var(--t-fast);
+}
+.expandBtn:hover { color: var(--orange); }
+
+.options {
+  background: var(--orange-pale);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.option {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--orange-light);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .tabInner { padding: 0 var(--space-4); }
+}
