@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import styles from './Nav.module.css'
 
 const links = [
+  { to: '/',        label: 'Home'      },
   { to: '/menu',    label: 'Menu'      },
   { to: '/about',   label: 'About'     },
   { to: '/contact', label: 'Find Us'   },
@@ -36,6 +37,7 @@ export default function Nav() {
             {links.map(({ to, label }) => (
               <NavLink
                 key={to} to={to}
+                end={to === '/'}
                 className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}
               >
                 {label}
